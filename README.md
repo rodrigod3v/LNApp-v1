@@ -92,8 +92,4 @@ Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desen
     * Abra o aplicativo **Expo Go** no seu smartphone e escaneie o QR Code.
     * Alternativamente, você pode executar em um simulador (Android Studio ou Xcode) pressionando `a` (Android) ou `i` (iOS) no terminal.
 
----
 
-## 📁 Estrutura de Pastas (Sugestão)
-
-Uma sugestão de como organizar o código-fonte:
