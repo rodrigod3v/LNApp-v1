@@ -1,55 +1,95 @@
-<<<<<<< HEAD
-# LNApp
-PROJETO PEX DESCOMPLICA, APP.
-=======
-# Welcome to your Expo app 👋
+# 🥊 Projeto LN: Aplicativo do Centro de Treinamento
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
 
-## Get started
+## 📝 Descrição do Projeto
 
-1. Install dependencies
+Este é um aplicativo móvel desenvolvido para o **Centro de Treinamento de Lutas LN**. O projeto visa facilitar a gestão de alunos, agendamento de aulas, comunicação e acompanhamento de desempenho dentro da academia.
 
-   ```bash
-   npm install
-   ```
+O aplicativo está sendo construído com **React Native** e **Expo**, garantindo uma base de código única para dispositivos iOS e Android.
 
-2. Start the app
+### Contexto Acadêmico
 
-   ```bash
-   npx expo start
-   ```
+Este projeto é parte integrante do **Projeto de Extensão** da **Faculdade Descomplica**, com o objetivo de aplicar conhecimentos técnicos em uma solução prática para um parceiro da comunidade.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ✨ Funcionalidades Planejadas
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+O aplicativo busca oferecer as seguintes funcionalidades principais:
 
-## Get a fresh project
+* **[ ] 👤 Autenticação de Usuário:** Login e cadastro para alunos e administradores.
+* **[ ] 🗓️ Agendamento de Aulas:** Alunos podem reservar seus lugares nas aulas (ex: Turma de Boxe, Jiu-Jitsu, Muay Thai).
+* **[ ] 📅 Quadro de Horários:** Visualização fácil da grade de aulas da semana.
+* **[ ] 📢 Mural de Avisos:** Comunicação direta da administração com os alunos (eventos, feriados, etc.).
+* **[ ] 📊 Perfil do Aluno:** Acompanhamento de frequência, progresso e status de pagamento.
+* **[ ] 🔔 Notificações Push:** Lembretes de aulas e avisos importantes.
+* **[ ] ... (Adicione outras funcionalidades que planeja ter)**
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🛠️ Tecnologias Utilizadas
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+* **React Native:** Framework principal para o desenvolvimento mobile.
+* **Expo (Managed Workflow):** Plataforma para facilitar o desenvolvimento, build e deploy do app.
+* **JavaScript / TypeScript:** Linguagem de programação base.
+* **[React Navigation]:** Para gerenciamento de rotas e navegação (Exemplo).
+* **[Styled Components / NativeWind]:** Para estilização (Exemplo).
+* **[Axios]:** Para realizar chamadas HTTP para a API (Exemplo).
+* **[Firebase / Supabase / API Própria]:** Para o backend e banco de dados (Exemplo).
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🚀 Como Executar o Projeto
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desenvolvimento.
 
-## Join the community
+### Pré-requisitos
 
-Join our community of developers creating universal apps.
+* [Node.js](https://nodejs.org/en/) (versão LTS recomendada)
+* [Git](https://git-scm.com/)
+* [Yarn](https://yarnpkg.com/) ou [NPM](https://www.npmjs.com/) (gerenciador de pacotes)
+* O aplicativo **Expo Go** no seu celular (iOS ou Android)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
->>>>>>> b5b33a0 (Initial commit)
+### Instalação
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://[URL-DO-SEU-REPOSITORIO-GIT].git
+    ```
+
+2.  **Acesse a pasta do projeto:**
+    ```bash
+    cd nome-do-projeto-ln
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    # Usando NPM
+    npm install
+    
+    # Ou usando Yarn
+    yarn install
+    ```
+
+### Executando o Aplicativo
+
+1.  **Inicie o servidor de desenvolvimento do Expo:**
+    ```bash
+    # Usando NPM
+    npm start
+    
+    # Ou usando Yarn
+    yarn start
+    
+    # Ou usando o Expo CLI diretamente
+    npx expo start
+    ```
+
+2.  **Abra o aplicativo:**
+    * Um QR Code aparecerá no seu terminal.
+    * Abra o aplicativo **Expo Go** no seu smartphone e escaneie o QR Code.
+    * Alternativamente, você pode executar em um simulador (Android Studio ou Xcode) pressionando `a` (Android) ou `i` (iOS) no terminal.
+
+
