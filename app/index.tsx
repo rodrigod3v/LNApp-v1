@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import {
   SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
   ScrollView,
-  TouchableOpacity,
   StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
+import { WebView } from "react-native-webview";
 // Ícones para React Native. É preciso ter 'react-native-vector-icons' instalado.
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -30,7 +31,17 @@ const colors = {
 /**
  * Componente: Botão da Barra de Navegação
  */
-function NavItem({ iconName, label, isActive, onPress }) {
+function NavItem({
+  iconName,
+  label,
+  isActive,
+  onPress,
+}: {
+  iconName: any;
+  label: string;
+  isActive: boolean;
+  onPress: () => void;
+}) {
   const activeColor = isActive ? colors.primary : colors.textMuted;
   return (
     <TouchableOpacity onPress={onPress} style={styles.navItem}>
@@ -43,7 +54,13 @@ function NavItem({ iconName, label, isActive, onPress }) {
 /**
  * Componente: Barra de Navegação Inferior
  */
-function BottomNav({ activeView, setActiveView }) {
+function BottomNav({
+  activeView,
+  setActiveView,
+}: {
+  activeView: string;
+  setActiveView: (view: string) => void;
+}) {
   return (
     <View style={styles.bottomNavContainer}>
       <NavItem
@@ -69,6 +86,12 @@ function BottomNav({ activeView, setActiveView }) {
         label="Financeiro"
         isActive={activeView === "financial"}
         onPress={() => setActiveView("financial")}
+      />
+      <NavItem
+        iconName={activeView === "form" ? "clipboard" : "clipboard-outline"}
+        label="Avaliação"
+        isActive={activeView === "form"}
+        onPress={() => setActiveView("form")}
       />
     </View>
   );
@@ -179,6 +202,27 @@ function FinancialView() {
   );
 }
 
+function FormView() {
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.background }}>
+      <WebView
+        source={{
+          uri: "https://docs.google.com/forms/d/e/1FAIpQLSfDprRs2JYNV5WCAzCungUJUB4wG0oI16pRttzPRW-frjrBHg/viewform?usp=header",
+        }}
+        style={{ flex: 1 }}
+        startInLoadingState={true}
+        renderLoading={() => (
+          <View
+            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+          >
+            <Text style={{ color: colors.text }}>Carregando...</Text>
+          </View>
+        )}
+      />
+    </View>
+  );
+}
+
 /**
  * Componente Principal: App
  */
@@ -210,13 +254,17 @@ export default function App() {
         <Text style={styles.headerTitle}>LN App</Text>
       </View>
 
-      {/* Área de Conteúdo Principal com Rolagem */}
-      <ScrollView
-        style={styles.contentScrollView}
-        contentContainerStyle={styles.contentContainer}
-      >
-        {renderView()}
-      </ScrollView>
+      {/* Área de Conteúdo Principal com Rolagem ou WebView */}
+      {activeView === "form" ? (
+        <FormView />
+      ) : (
+        <ScrollView
+          style={styles.contentScrollView}
+          contentContainerStyle={styles.contentContainer}
+        >
+          {renderView()}
+        </ScrollView>
+      )}
 
       {/* Menu de Navegação Inferior */}
       <BottomNav activeView={activeView} setActiveView={setActiveView} />
@@ -271,7 +319,7 @@ const styles = StyleSheet.create({
   navItem: {
     alignItems: "center",
     justifyContent: "center",
-    width: 80,
+    flex: 1,
     padding: 4,
   },
   navLabel: {
